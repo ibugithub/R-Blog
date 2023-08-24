@@ -180,5 +180,5 @@ I would like to thank to [Nelson Sakwa on Behance.](https://www.behance.net/sakw
 <!-- LICENSE -->
 
 ## 📝 License <a name="License"></a>
-This project is [MIT](LICENSE) licensed.
+This project is [MIT](./LICENSE) licensed.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
