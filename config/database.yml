@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: hellorails
+  database: R-Blog
   username: Ibu
   password: ibuPostData1749%
   host: localhost
@@ -61,7 +61,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: hellorails
+  database: R-Blog
   username: Ibu
   password: ibuPostData1749%
   host: localhost
@@ -88,7 +88,7 @@ test:
 #
 production:
   <<: *default
-  database: hellorails
+  database: R-Blog
   username: Ibu
   password: ibuPostData1749%
   host: localhost
