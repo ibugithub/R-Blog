@@ -1,0 +1,2 @@
+class Person < ActiveRecord
+end
