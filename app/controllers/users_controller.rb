@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  
   def index
     @users = User.all
   end
@@ -9,5 +8,4 @@ class UsersController < ApplicationController
     @user = User.find(user_id)
     @posts = @user.posts
   end
-
 end
