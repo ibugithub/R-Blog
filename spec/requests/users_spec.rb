@@ -19,19 +19,20 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'GET /users/:id' do
-    user_id = 19
+    let(:user) { User.create(name: 'Test User') }
+
     it 'returns a successful response' do
-      get "/users/#{user_id}"
+      get "/users/#{user.id}"
       expect(response).to have_http_status(200)
     end
 
     it 'renders the show template' do
-      get "/users/#{user_id}"
+      get "/users/#{user.id}"
       expect(response).to render_template(:show)
     end
 
     it 'includes correct placeholder text in the response body' do
-      get "/users/#{user_id}"
+      get "/users/#{user.id}"
       expect(response.body).to include('Number of Posts')
     end
   end
