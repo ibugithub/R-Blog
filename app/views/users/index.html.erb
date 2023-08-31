@@ -1,0 +1,10 @@
+<h1> List of all users </h1> 
+
+<ul style="display:flex; flex-direction:column; justify-content:center; align-items:center"> 
+
+<% @users.each do |user| %>
+<li style="list-style:none"> <%= user.name %>  </li>
+<li style="list-style:none"> <img style="height:50vh" src="<%= user.photo %>", alt="user image">  </li>
+<% end %>
+
+</ul>
