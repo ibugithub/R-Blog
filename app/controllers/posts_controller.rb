@@ -35,7 +35,6 @@ class PostsController < ApplicationController
     redirect_to user_posts_path
   end
 
-
   private
 
   def post_params
