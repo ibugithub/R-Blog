@@ -1,0 +1,18 @@
+<h1 >Add a comment</h1>
+
+<%= form_with model: @comment, url: user_post_comments_path(@user, @post), method: :post do |form| %>
+  <% if form.object.errors.any? %>
+    <div>
+      <%form.object.errors.full_messages.each do |message| %>
+        <p><%= message %></p>
+      <% end %>
+    </div>
+  <%end %>
+  <div>
+    <%= form.label :text %>
+    <%= form.text_area :text %>
+  </div>
+  <button type="button" >
+    <%= form.submit %>
+  </button>
+<% end %>
