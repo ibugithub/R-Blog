@@ -33,3 +33,6 @@
 
 # Ignore all the node modules
 /node_modules
+
+# Ignore demo text
+/demo-data.txt

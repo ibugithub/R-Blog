@@ -1,18 +1,4 @@
-<!-- app/views/users/show_posts.html.erb -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= @user.name %>'s Posts and Comments</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-
+<% content_for :styles do %>
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -22,6 +8,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
+    
         .user-header {
             display: flex;
             justify-content: space-between;
@@ -29,6 +16,7 @@
             border-bottom: 1px solid #ccc;
             padding-bottom: 10px;
             margin-bottom: 20px;
+             flex-direction: column;
         }
 
         .user-header h2 {
@@ -48,7 +36,6 @@
             margin-top: 0;
             font-size: 22px;
         }
-
         .comments {
             margin-top: 10px;
             font-size: 14px;
@@ -60,21 +47,33 @@
             padding-left: 20px;
             list-style: disc;
         }
-    </style>
-</head>
-<body>
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+<% end %>
 
 <div class="container">
     <div class="user-header">
-        <h2><%= @user.name %></h2>
-        <h3><%= @targated_post.text %></h3>
-        <p>Number of Posts: <%= @targated_post.comments_counter %></p>
+        <div class='top'>
+            <div>
+                <p> Post by <%= @user.name %> </p>
+                <%= @targated_post.text %>
+            </div>
+           
+            <div> 
+                <p>
+                    likes: <%= @targated_post.likes_counter %> Comments: <%= @targated_post.comments_counter %>
+                </p>
+            </div>
+        </div>
     </div>
     
     <% @comments.each do |comment| %>
         <li> <%= comment.text %>
     <% end %>
 </div>
-
-</body>
-</html>

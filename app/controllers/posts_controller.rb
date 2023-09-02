@@ -14,4 +14,30 @@ class PostsController < ApplicationController
     @targated_post = @posts.find(id)
     @comments = @targated_post.comments
   end
+
+  def new
+    @post = Post.new
+  end
+
+  def create
+    @post = current_user.posts.build(post_params)
+
+    if @post.save
+      redirect_to user_post_path(current_user, @post)
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    @post = current_user.posts.find(params[:id])
+    @post.destroy
+    redirect_to user_posts_path
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :text)
+  end
 end

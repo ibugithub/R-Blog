@@ -2,9 +2,11 @@
 
 <ul style="display:flex; flex-direction:column; justify-content:center; align-items:center"> 
 
+
 <% @users.each do |user| %>
+<%= link_to user_path(user) do %>
 <li style="list-style:none"> <%= user.name %>  </li>
 <li style="list-style:none"> <img style="height:50vh" src="<%= user.photo %>", alt="user image">  </li>
 <% end %>
-
+<% end %>
 </ul>
