@@ -6,7 +6,7 @@ FactoryBot.define do
   end
   trait :with_comments do
     after :create do |post|
-      create_list(:comment, 3, post: post)
+      create_list(:comment, 3, post:)
     end
   end
 end

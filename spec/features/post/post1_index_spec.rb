@@ -27,13 +27,11 @@ RSpec.feature 'User post index page', type: :feature do
   scenario 'I can see the first comments on a post' do
     post = create(:post, :with_comments, author: user) # Create a post with comments
     visit user_posts_path(user)
-  
-    within(".post", text: post.title) do
+
+    within('.post', text: post.title) do
       post.comments.first(3).each do |comment|
         expect(page).to have_content(comment.text)
       end
     end
   end
-  
-
 end

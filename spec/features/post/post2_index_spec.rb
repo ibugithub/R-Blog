@@ -5,7 +5,7 @@ RSpec.feature 'User post index page', type: :feature do
   let(:post) { user.posts.first }
 
   scenario 'I can see how many comments a post has' do
-    post = create(:post, :with_comments, author: user) 
+    post = create(:post, :with_comments, author: user)
     visit user_posts_path(user)
     expect(page).to have_content("Comments: #{post.comments_counter}")
   end
