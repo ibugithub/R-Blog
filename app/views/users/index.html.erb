@@ -7,6 +7,7 @@
 <%= link_to user_path(user) do %>
 <li style="list-style:none"> <%= user.name %>  </li>
 <li style="list-style:none"> <img style="height:50vh" src="<%= user.photo %>", alt="user image">  </li>
+<li style="list-style:none"> Number Of Posts: <%= user.posts_counter %>  </li>
 <% end %>
 <% end %>
 </ul>
