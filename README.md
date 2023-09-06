@@ -112,10 +112,18 @@ To run the project:
 
 ```sh
   cd PATH_TO_CLONE
-  npm install
   bundle install 
   rails server
 ```
+
+To run the tests:
+<!-- 
+- Method 1: -->
+
+```sh
+  bundle exec rspec  
+```
+
 <!-- 
 Method 2:
 Open './dist/index.html' in your browser of choice -->
