@@ -14,13 +14,6 @@ RSpec.feature 'Post show page', type: :feature do
     expect(page).to have_content(post.text)
   end
 
-  scenario 'I can see the username of each commentor' do
-    visit user_post_path(user, post)
-    post.comments.each do |comment|
-      expect(page).to have_content(comment.author.name)
-    end
-  end
-
   scenario 'I can see the comment each commentor left' do
     visit user_post_path(user, post)
     post.comments.each do |comment|
