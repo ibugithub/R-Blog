@@ -1,27 +1,27 @@
-
 <div class="container">
     <div class="user-header">
         <h2><%= @user.name %></h2>
-        <%= link_to user_posts_path(@user) do %>
-        <p>Number of Posts: <%= @posts.count %></p>
-        <% end %>
+        <p>Number of Posts: <%= @user.posts_counter %></p>
     </div>
     
     <div class="user-bio">
+        <img style="height:50vh" src="<%= @user.photo %>", alt="user image"> 
         <h3>Bio</h3>
         <p><%= @user.bio %></p>
     </div>
 
     <div class="user-posts">
         <% @posts.each do |post| %>
+            <%= link_to user_post_path(@user, post) do %>
             <div class="post">
                 <h2><%= post.title %></h2>
                 <p><%= post.text %></p>
             </div>
+            <% end %>
         <% end %>
     </div>
 
     <div class="see-all-posts">
-        <a href="#">See all posts</a>
+        <%= link_to 'View All Posts', user_posts_path(@user) %>
     </div>
 </div>

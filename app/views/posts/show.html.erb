@@ -61,6 +61,8 @@
     <div class="user-header">
         <div class='top'>
             <div>
+                <p> <%= @targated_post.title %>  </p>
+                <p> Likes: <%= @targated_post.likes_counter %>  </p>
                 <p> Post by <%= @user.name %> </p>
                 <%= @targated_post.text %>
             </div>

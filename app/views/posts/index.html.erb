@@ -1,14 +1,18 @@
 <div class="container">
   <div class="user-header">
     <h2><%= @user.name %></h2>
-    <p>Number of Posts: <%= @posts.count %></p>
+    <p>Number of Posts: <%= @user.posts_counter %></p>
+    <img style="height:50vh" src="<%= @user.photo %>", alt="user image"> 
   </div>
 
   <% @posts.each do |post| %>
     <%= link_to user_post_path(@user, post) do %>
       <div class="post">
+      <%= link_to  user_post_path(@user, post) do %>
         <h2><%= post.title %></h2>
+      <% end %>
         <p><%= post.text %></p>
+        <p> Likes: <%= post.likes_counter %> </p>
         <div class="comments">
           <p><%= post.comments_counter %> Comments</p>
           <ul>
@@ -35,4 +39,7 @@
         </div>
       </div>
   <% end %>
+    <div class="pagination">
+    <%= will_paginate @posts %>
+  </div>
 </div>
