@@ -4,9 +4,10 @@ RSpec.feature 'User post index page', type: :feature do
   let(:user) { create(:user, :with_posts) }
   let(:post) { user.posts.first }
 
-  scenario 'I can see a post\'s title' do
+  scenario 'I can see how many comments a post has' do
+    post = create(:post, :with_comments, author: user) 
     visit user_posts_path(user)
-    expect(page).to have_content(post.title)
+    expect(page).to have_content("Comments: #{post.comments_counter}")
   end
 
   scenario 'I can see some of the post\'s body' do

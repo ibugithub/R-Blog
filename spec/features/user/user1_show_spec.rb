@@ -8,6 +8,11 @@ RSpec.feature 'User show page', type: :feature do
     expect(page).to have_css("img[src*='#{user.photo}']")
   end
 
+  scenario 'I can see the user\'s username' do
+    visit user_path(user)
+    expect(page).to have_content(user.name)
+  end
+
   scenario 'I can see the number of posts the user has written' do
     visit user_path(user)
     expect(page).to have_css('.user-header p', text: /Number Of Posts:\s*#{user.posts_counter}/i)
