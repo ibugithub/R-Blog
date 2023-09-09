@@ -11,9 +11,10 @@ class User < ApplicationRecord
 
   before_create :set_default_photo
 
-  def set_default_photo 
+  def set_default_photo
     self.photo = "https://randomuser.me/api/portraits/men/#{rand(1..100)}.jpg"
   end
+
   def recent_3posts
     posts.order(created_at: :desc).limit(3)
   end
